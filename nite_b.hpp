@@ -6,11 +6,6 @@
 
 #include <NiTE.h>
 #include <OpenNI.h>
-#include <map>
-#include <boost/python.hpp>
-
-using namespace boost::python;
-
 
 class NiTE_b
 {

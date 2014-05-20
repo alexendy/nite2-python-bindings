@@ -2,6 +2,7 @@
 // Imperial College London, 20/05/2014
 
 #include "nite_b.hpp"
+#include <iostream>
 
 
 bool NiTE_b::initialize()

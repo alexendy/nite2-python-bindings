@@ -2,6 +2,10 @@
 // Imperial College London, 20/05/2014
 
 #include "nite_b.hpp"
+#include <boost/python.hpp>
+
+using namespace boost::python;
+
 
 
 BOOST_PYTHON_MODULE(nite2)
