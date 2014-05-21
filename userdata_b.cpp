@@ -25,7 +25,7 @@ UserData_b::~UserData_b()
 
 Skeleton_b * UserData_b::getSkeleton()
 {
-	Skeleton_b * sk_b = new Skeleton_b();
+	Skeleton_b * sk_b = new Skeleton_b(ud->getSkeleton());
 	return sk_b;
 }
 

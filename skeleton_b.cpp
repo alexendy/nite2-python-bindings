@@ -10,6 +10,11 @@ Skeleton_b::Skeleton_b()
 	sk = new nite::Skeleton;
 }
 
+Skeleton_b::Skeleton_b(const nite::Skeleton & s)
+{
+	sk = new nite::Skeleton(s); //Inefficient but better than trying to second guess NiTE's reference handling
+}
+
 
 Skeleton_b::~Skeleton_b()
 {

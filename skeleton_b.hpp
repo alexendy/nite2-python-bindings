@@ -11,6 +11,7 @@ class Skeleton_b
 {
 public:
 	Skeleton_b();
+	Skeleton_b(const nite::Skeleton & s);
 	~Skeleton_b();
 
 private:
