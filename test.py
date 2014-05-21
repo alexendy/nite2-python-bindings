@@ -25,7 +25,8 @@ while(True):
 			print("New user id %d !" % uid)
 			tracker.startSkeletonTracking(uid)
 		else:
-			print(user.getSkeleton())
+			head = user.getSkeleton().getJoint(JointType.JOINT_HEAD)
+			print(head.getPosition())
 			
 
 tracker.destroy()

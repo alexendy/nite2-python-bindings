@@ -57,7 +57,13 @@ BOOST_PYTHON_MODULE(nite2)
         ;
 
 	class_<SkeletonJoint_b>("SkeletonJoint") // No need to expose the non-default constructor
+		.def("getPosition", &SkeletonJoint_b::getPosition)
+		.def("getPositionConfidence", &SkeletonJoint_b::getPositionConfidence)
+		.def("getOrientation", &SkeletonJoint_b::getOrientation)
+		.def("getOrientationConfidence", &SkeletonJoint_b::getOrientationConfidence)
+		.def("getType", &SkeletonJoint_b::getType)
 	;
+
 
 	class_<Skeleton_b>("Skeleton") // No need to expose the non-default constructor
 		.def("getJoint", &Skeleton_b::getJoint, return_value_policy<manage_new_object>() )
