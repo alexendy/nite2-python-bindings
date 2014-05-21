@@ -5,6 +5,7 @@
 #include "usertrackerframeref_b.hpp"
 #include "userdata_b.hpp"
 #include "usertracker_b.hpp"
+#include "skeleton_b.hpp"
 #include <boost/python.hpp>
 
 using namespace boost::python;
@@ -30,6 +31,8 @@ BOOST_PYTHON_MODULE(nite2)
 
         ;
 	class_<UserData_b>("UserData") // No need to expose the non-default constructor
+        ;
+	class_<Skeleton_b>("Skeleton") // No need to expose the non-default constructor
         ;
 
 	class_<UserTracker_b>("UserTracker")
