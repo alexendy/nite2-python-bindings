@@ -21,6 +21,13 @@ BOOST_PYTHON_MODULE(nite2)
         ;
 
 	class_<UserTrackerFrameRef_b>("UserTrackerFrameRef") // No need to expose the non-default constructor
+		.def("getFrameIndex", &UserTrackerFrameRef_b::getFrameIndex)
+		.def("getTimestamp",  &UserTrackerFrameRef_b::getTimestamp)
+		.def("getUserById", &UserTrackerFrameRef_b::getUserById, return_value_policy<manage_new_object>() )
+		.def("getUsers", &UserTrackerFrameRef_b::getUsers)
+		.def("isValid", &UserTrackerFrameRef_b::isValid)
+		.def("release", &UserTrackerFrameRef_b::release)
+
         ;
 	class_<UserData_b>("UserData") // No need to expose the non-default constructor
         ;
