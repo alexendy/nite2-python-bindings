@@ -9,7 +9,7 @@ UserData_b::UserData_b()
 }
 
 
-UserData_b::UserData_b(nite::UserData * data);
+UserData_b::UserData_b(nite::UserData * data)
 {
 	ud = data;
 }
