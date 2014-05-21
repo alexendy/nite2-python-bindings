@@ -21,23 +21,29 @@ BOOST_PYTHON_MODULE(nite2)
 		.staticmethod("shutdown")
         ;
 
+	class_<Skeleton_b>("Skeleton") // No need to expose the non-default constructor
+        ;
+
 	class_<UserTrackerFrameRef_b>("UserTrackerFrameRef") // No need to expose the non-default constructor
 		.def("getFrameIndex", &UserTrackerFrameRef_b::getFrameIndex)
 		.def("getTimestamp",  &UserTrackerFrameRef_b::getTimestamp)
+//		.def("getUserById", &UserTrackerFrameRef_b::getUserById)
+//		.def("getUserById", &UserTrackerFrameRef_b::getUserById, return_value_policy<reference_existing_object>() )
 		.def("getUserById", &UserTrackerFrameRef_b::getUserById, return_value_policy<manage_new_object>() )
 		.def("getUsers", &UserTrackerFrameRef_b::getUsers)
 		.def("isValid", &UserTrackerFrameRef_b::isValid)
 		.def("release", &UserTrackerFrameRef_b::release)
 
         ;
+
+
+
 	class_<UserData_b>("UserData") // No need to expose the non-default constructor
 		.def("getId",&UserData_b::getId)
 		.def("getSkeleton",&UserData_b::getSkeleton, return_value_policy<manage_new_object>())
 		.def("isLost",&UserData_b::isLost)
 		.def("isNew",&UserData_b::isNew)
 		.def("isVisible",&UserData_b::isVisible)
-        ;
-	class_<Skeleton_b>("Skeleton") // No need to expose the non-default constructor
         ;
 
 	class_<UserTracker_b>("UserTracker")

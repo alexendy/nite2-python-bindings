@@ -16,6 +16,7 @@ public:
 	~UserData_b();
 	int getId() {return ud->getId(); };
 	Skeleton_b * getSkeleton();
+	const nite::Skeleton& getSkeleton_real(); // Not exposed to Python
 	bool isLost() {return ud->isLost(); };
 	bool isNew() {return ud->isNew(); };
 	bool isVisible() {return ud->isVisible(); };
@@ -27,6 +28,7 @@ public:
 
 private:
 	nite::UserData * ud;
+	bool own_user_data;
 };
 
 #endif // USERDATA_B_HPP

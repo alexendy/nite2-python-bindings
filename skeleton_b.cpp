@@ -7,19 +7,13 @@
 
 Skeleton_b::Skeleton_b()
 {
-	;
+	sk = new nite::Skeleton;
 }
 
-
-Skeleton_b::Skeleton_b(nite::Skeleton & s)
-{
-	sk = s;
-}
 
 Skeleton_b::~Skeleton_b()
 {
-	;
+	delete sk;
 }
-
 
 
