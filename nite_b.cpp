@@ -4,6 +4,7 @@
 #include "nite_b.hpp"
 #include <iostream>
 
+bool NiTE_b::initialized = false;
 
 bool NiTE_b::initialize()
 {

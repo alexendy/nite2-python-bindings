@@ -15,6 +15,8 @@ BOOST_PYTHON_MODULE(nite2)
 	class_<NiTE_b>("NiTE")
 		.def("initialize", &NiTE_b::initialize)
 		.def("shutdown", &NiTE_b::shutdown)
+		.staticmethod("initialize")
+		.staticmethod("shutdown")
         ;
 
 	class_<UserTrackerFrameRef_b>("UserTrackerFrameRef") // No need to expose the non-default constructor
