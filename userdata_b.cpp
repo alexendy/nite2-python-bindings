@@ -20,4 +20,10 @@ UserData_b::~UserData_b()
 }
 
 
+Skeleton_b * UserData_b::getSkeleton()
+{
+	nite::Skeleton s = ud->getSkeleton();
+	Skeleton_b * sk_b = new Skeleton_b(s);
+	return sk_b;
+}
 

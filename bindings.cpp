@@ -31,6 +31,11 @@ BOOST_PYTHON_MODULE(nite2)
 
         ;
 	class_<UserData_b>("UserData") // No need to expose the non-default constructor
+		.def("getId",&UserData_b::getId)
+		.def("getSkeleton",&UserData_b::getSkeleton, return_value_policy<manage_new_object>())
+		.def("isLost",&UserData_b::isLost)
+		.def("isNew",&UserData_b::isNew)
+		.def("isVisible",&UserData_b::isVisible)
         ;
 	class_<Skeleton_b>("Skeleton") // No need to expose the non-default constructor
         ;

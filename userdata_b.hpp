@@ -6,6 +6,7 @@
 #include <NiTE.h>
 #include <OpenNI.h>
 
+#include "skeleton_b.hpp"
 
 class UserData_b
 {
@@ -13,7 +14,16 @@ public:
 	UserData_b();
 	UserData_b(nite::UserData * data);
 	~UserData_b();
+	int getId() {return ud->getId(); };
+	Skeleton_b * getSkeleton();
+	bool isLost() {return ud->isLost(); };
+	bool isNew() {return ud->isNew(); };
+	bool isVisible() {return ud->isVisible(); };
 
+	// TODO:
+	// getPose()
+	// getBoundingBox
+	// getCenterOfMass
 
 private:
 	nite::UserData * ud;

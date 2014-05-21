@@ -11,11 +11,11 @@ class Skeleton_b
 {
 public:
 	Skeleton_b();
-	Skeleton_b(nite::Skeleton * s);
+	Skeleton_b(nite::Skeleton &s);
 	~Skeleton_b();
 
 private:
-	nite::Skeleton * sk;
+	nite::Skeleton sk;
 };
 
 #endif // SKELETON_B_HPP
