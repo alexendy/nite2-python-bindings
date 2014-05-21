@@ -3,6 +3,7 @@
 
 #include "nite_b.hpp"
 #include "usertrackerframeref_b.hpp"
+#include "userdata_b.hpp"
 #include "usertracker_b.hpp"
 #include <boost/python.hpp>
 
@@ -20,6 +21,8 @@ BOOST_PYTHON_MODULE(nite2)
         ;
 
 	class_<UserTrackerFrameRef_b>("UserTrackerFrameRef") // No need to expose the non-default constructor
+        ;
+	class_<UserData_b>("UserData") // No need to expose the non-default constructor
         ;
 
 	class_<UserTracker_b>("UserTracker")
