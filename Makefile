@@ -14,7 +14,7 @@ CC=g++
 
 CFLAGS=-c -fPIC -std=c++0x -Wall -I$(OPENNI2_INCLUDE) -I$(NITE2_INCLUDE) -I$(PYTHON_INCLUDE) -I$(BOOST_INC)
 LDFLAGS=-fPIC -shared -std=c++0x -L$(NITE2_REDIST) -L$(OPENNI2_REDIST) -L$(BOOST_LIB) -L$(PYTHON_LIB) -lNiTE2 -lOpenNI2 -lpthread -lpython$(PYTHON_VERSION) -lboost_python-py27
-SRC=nite_b.cpp usertrackerframeref_b.cpp usertracker_b.cpp bindings.cpp
+SRC=nite_b.cpp usertrackerframeref_b.cpp usertracker_b.cpp userdata_b.cpp bindings.cpp
 OBJ=$(SRC:.cpp=.o)
 NAME=nite2.so
 
