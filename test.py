@@ -10,7 +10,7 @@ from nite2 import *
 
 import time
 
-
+# Test code -- print head coordinates of users
 
 NiTE.initialize()
 
@@ -25,8 +25,9 @@ while(True):
 			print("New user id %d !" % uid)
 			tracker.startSkeletonTracking(uid)
 		else:
-			head = user.getSkeleton().getJoint(JointType.JOINT_HEAD)
-			print(head.getPosition())
+			if user.isVisible():
+				head = user.getSkeleton().getJoint(JointType.JOINT_HEAD)
+				print("User {} : {}".format(uid, head.getPosition()))
 			
 
 tracker.destroy()
