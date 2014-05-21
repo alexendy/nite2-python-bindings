@@ -11,7 +11,7 @@ class UserData_b
 {
 public:
 	UserData_b();
-	UserData_b( nite::UserData * data);
+	UserData_b(nite::UserData * data);
 	~UserData_b();
 
 
