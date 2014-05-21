@@ -2,6 +2,7 @@
 // Imperial College London, 20/05/2014
 
 #include "nite_b.hpp"
+#include "skeletonjoint_b.hpp"
 #include "usertrackerframeref_b.hpp"
 #include "userdata_b.hpp"
 #include "usertracker_b.hpp"
@@ -55,14 +56,18 @@ BOOST_PYTHON_MODULE(nite2)
 		.staticmethod("shutdown")
         ;
 
+	class_<SkeletonJoint_b>("SkeletonJoint") // No need to expose the non-default constructor
+	;
+
 	class_<Skeleton_b>("Skeleton") // No need to expose the non-default constructor
+		.def("getJoint", &Skeleton_b::getJoint, return_value_policy<manage_new_object>() )
+		.def("getState", &Skeleton_b::getState)
         ;
+
 
 	class_<UserTrackerFrameRef_b>("UserTrackerFrameRef") // No need to expose the non-default constructor
 		.def("getFrameIndex", &UserTrackerFrameRef_b::getFrameIndex)
 		.def("getTimestamp",  &UserTrackerFrameRef_b::getTimestamp)
-//		.def("getUserById", &UserTrackerFrameRef_b::getUserById)
-//		.def("getUserById", &UserTrackerFrameRef_b::getUserById, return_value_policy<reference_existing_object>() )
 		.def("getUserById", &UserTrackerFrameRef_b::getUserById, return_value_policy<manage_new_object>() )
 		.def("getUsers", &UserTrackerFrameRef_b::getUsers)
 		.def("isValid", &UserTrackerFrameRef_b::isValid)
